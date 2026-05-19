@@ -1,5 +1,19 @@
 <x-guest-layout>
     <div class="max-w-2xl mx-auto bg-[#141414] border border-red-900/40 p-8 shadow-2xl relative">
+        
+        <div class="text-center mb-8">
+            <div class="flex justify-center mb-4">
+                <img src="{{ asset('images/nfs.png') }}" 
+                     onerror="this.src='https://i.imgur.com/vHCHYmR.png'" 
+                     class="h-16 object-contain filter drop-shadow-[0_0_10px_rgba(239,68,68,0.2)]" 
+                     alt="Need For Speed Most Wanted">
+            </div>
+            <h2 class="text-xl font-black text-red-600 uppercase tracking-[0.25em] italic drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] animate-pulse">
+                AUTHORIZED PERSONNEL ONLY
+            </h2>
+            <div class="h-[2px] bg-gradient-to-r from-transparent via-red-800 to-transparent w-3/4 mx-auto mt-3"></div>
+        </div>
+
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
@@ -10,7 +24,7 @@
             </div>
 
             <div class="mt-4">
-                <x-input-label for="email" value="{{ __('Email Address') }}" class="text-gray-400 font-bold uppercase text-xs tracking-wider" />
+                <x-input-label for="email" value="{{ __('Officer ID (Email)') }}" class="text-gray-400 font-bold uppercase text-xs tracking-wider" />
                 <x-text-input id="email" class="block mt-1 w-full bg-black border-gray-800 text-white focus:border-red-600 focus:ring-red-600" type="email" name="email" :value="old('email')" required autocomplete="username" />
                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
             </div>
@@ -28,9 +42,9 @@
             </div>
 
             <div class="mt-6">
-                <x-input-label value="SELECT YOUR OFFICER AVATAR" class="text-red-600 font-black text-xs tracking-[0.15em] mb-3 italic animate-pulse" />
+                <x-input-label value="SELECT YOUR OFFICER AVATAR" class="text-red-600 font-black text-xs tracking-[0.15em] mb-3 italic" />
                 
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-black p-4 border border-gray-900 shadow-[inset_0_0_15px_rgba(0,0,0,0.8)] max-h-[420px] overflow-y-auto custom-scrollbar">
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-black p-4 border border-gray-900 shadow-[inset_0_0_15px_rgba(0,0,0,0.8)] max-h-[340px] overflow-y-auto custom-scrollbar">
                     
                     @php
                         $drivers = [

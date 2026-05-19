@@ -5,25 +5,7 @@
                 {{ __('Driver Command Center') }}
             </h2>
 
-            <div class="flex items-center gap-4">
-                <div class="text-right">
-                    <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest animate-pulse italic">
-                        // System Active
-                    </p>
-                    <p class="font-black text-white italic uppercase tracking-tighter">
-                        OFFICER: {{ Auth::user()->name }}
-                    </p>
-                </div>
-
-                <div class="relative">
-                    <img src="{{ asset('images/avatars/' . (Auth::user()->avatar ?? 'nfsmw.jpg')) }}"
-                        onerror="this.src='{{ asset('images/avatars/nfsmw.jpg') }}'"
-                        class="w-12 h-12 border-2 border-red-600 shadow-[0_0_15px_rgba(220,38,38,0.5)] object-cover bg-black"
-                        alt="{{ Auth::user()->name }}">
-                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent pointer-events-none"></div>
-                </div>
             </div>
-        </div>
     </x-slot>
 
     <div class="py-12">
